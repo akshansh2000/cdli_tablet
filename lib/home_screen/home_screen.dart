@@ -46,10 +46,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     )
                   : widget.bloc.didFail
                       ? Center(
-                          child: Text(
-                            "An error occurred. Please check your internet connection, and try again.",
-                            style: TextStyle(
-                              color: Colors.redAccent,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 25),
+                            child: Text(
+                              "An error occurred. Please check your internet connection, and try again.",
+                              style: TextStyle(
+                                color: Colors.redAccent,
+                              ),
+                              textAlign: TextAlign.center,
                             ),
                           ),
                         )

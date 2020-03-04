@@ -22,6 +22,10 @@ class HomeScreenBloc {
   HomeScreenBloc() {
     _mapEventToState(HomeScreenEvent event) {
       if (event is FetchArtifacts) {
+        isLoading = true;
+        didFail = false;
+        _intermediate.add(isLoading);
+
         _fetchArtifacts();
       }
     }
