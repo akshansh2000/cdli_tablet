@@ -9,7 +9,7 @@ class HomeScreenBloc {
   bool isLoading = true;
   bool didFail = false;
 
-  List<Map<String, String>> fetchedData = List<Map<String, String>>();
+  List<dynamic> fetchedData = List<Map<String, String>>();
 
   StreamController<bool> _stateController = StreamController<bool>();
   StreamSink<bool> get _intermediate => _stateController.sink;
