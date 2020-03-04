@@ -10,6 +10,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "CDLI Tablet",
       home: HomeScreen(),
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          color: Colors.black,
+          elevation: 0,
+          brightness: Brightness.dark,
+        ),
+        scaffoldBackgroundColor: Colors.black,
+      ),
     );
   }
 }
