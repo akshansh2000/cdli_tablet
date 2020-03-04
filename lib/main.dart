@@ -8,15 +8,18 @@ void main() {
   final bloc = HomeScreenBloc();
   bloc.input.add(FetchArtifacts());
 
-  runApp(MyApp());
+  runApp(MyApp(bloc));
 }
 
 class MyApp extends StatelessWidget {
+  MyApp(this.bloc);
+  final HomeScreenBloc bloc;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "CDLI Tablet",
-      home: HomeScreen(),
+      home: HomeScreen(bloc),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,

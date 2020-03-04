@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:cdli_tablet/home_screen/home_screen_bloc.dart';
+
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key key}) : super(key: key);
+  HomeScreen(this.bloc, {Key key}) : super(key: key);
+
+  final HomeScreenBloc bloc;
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
