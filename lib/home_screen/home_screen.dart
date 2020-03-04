@@ -33,12 +33,16 @@ class _HomeScreenState extends State<HomeScreen> {
         stream: widget.bloc.output,
         builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
           return !snapshot.hasData
-              ? CircularProgressIndicator(
-                  backgroundColor: Colors.white,
+              ? Center(
+                  child: CircularProgressIndicator(
+                    backgroundColor: Colors.white,
+                  ),
                 )
               : snapshot.data
-                  ? CircularProgressIndicator(
-                      backgroundColor: Colors.white,
+                  ? Center(
+                      child: CircularProgressIndicator(
+                        backgroundColor: Colors.white,
+                      ),
                     )
                   : PageView();
         },
