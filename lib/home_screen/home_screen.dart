@@ -44,7 +44,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         backgroundColor: Colors.white,
                       ),
                     )
-                  : PageView();
+                  : widget.bloc.didFail
+                      ? Center(
+                          child: Text(
+                            "An error occurred. Please check your internet connection, and try again.",
+                            style: TextStyle(
+                              color: Colors.redAccent,
+                            ),
+                          ),
+                        )
+                      : PageView();
         },
       ),
     );
