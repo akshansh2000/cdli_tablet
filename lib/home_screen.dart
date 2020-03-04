@@ -13,6 +13,16 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text("CDLI Tablet"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.share),
+            onPressed: null,
+          ),
+          IconButton(
+            icon: Icon(Icons.grid_on),
+            onPressed: null,
+          ),
+        ],
       ),
     );
   }

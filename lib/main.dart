@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        brightness: Brightness.dark,
         appBarTheme: AppBarTheme(
           color: Colors.black,
           elevation: 0,
