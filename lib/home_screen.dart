@@ -16,11 +16,11 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.share),
-            onPressed: null,
+            onPressed: () {},
           ),
           IconButton(
             icon: Icon(Icons.grid_on),
-            onPressed: null,
+            onPressed: () {},
           ),
         ],
       ),
