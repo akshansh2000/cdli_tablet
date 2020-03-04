@@ -26,7 +26,9 @@ class HomeScreenBloc {
     _eventController.stream.listen(_mapEventToState);
   }
 
-  _fetchArtifacts() async {}
+  _fetchArtifacts() async {
+    final apiUri = "https://cdli.ucla.edu/cdlitablet_android/fetchdata";
+  }
 
   void dispose() {
     _stateController.close();
