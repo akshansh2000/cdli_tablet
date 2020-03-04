@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:cdli_tablet/home_screen/home_screen.dart';
+import 'package:cdli_tablet/home_screen/home_screen_bloc.dart';
+import 'package:cdli_tablet/home_screen/home_screen_event.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  final bloc = HomeScreenBloc();
+  bloc.input.add(FetchArtifacts());
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
