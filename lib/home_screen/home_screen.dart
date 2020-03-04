@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:cdli_tablet/home_screen/home_screen_bloc.dart';
 import 'package:cdli_tablet/home_screen/home_screen_event.dart';
 
+import 'package:preload_page_view/preload_page_view.dart';
+
 class HomeScreen extends StatefulWidget {
   HomeScreen(this.bloc, {Key key}) : super(key: key);
 
@@ -62,9 +64,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                         )
-                      : PageView(
+                      : PreloadPageView(
                           scrollDirection: Axis.horizontal,
                           physics: BouncingScrollPhysics(),
+                          preloadPagesCount: 20,
                           children: widget.bloc.fetchedData
                               .map(
                                 (element) => Image.network(
