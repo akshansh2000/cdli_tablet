@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "CDLI Tablet",
       home: HomeScreen(),
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         appBarTheme: AppBarTheme(
           color: Colors.black,
