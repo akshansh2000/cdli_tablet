@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:cdli_tablet/home_screen.dart';
+import 'package:cdli_tablet/home_screen/home_screen.dart';
 
 void main() => runApp(MyApp());
 

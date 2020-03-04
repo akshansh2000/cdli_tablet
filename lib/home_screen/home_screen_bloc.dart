@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:cdli_tablet/home_screen_event.dart';
+import 'package:cdli_tablet/home_screen/home_screen_event.dart';
 
 import 'package:http/http.dart';
 
