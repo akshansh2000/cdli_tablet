@@ -28,6 +28,21 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
+      body: StreamBuilder(
+        initialData: true,
+        stream: widget.bloc.output,
+        builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+          return !snapshot.hasData
+              ? CircularProgressIndicator(
+                  backgroundColor: Colors.white,
+                )
+              : snapshot.data
+                  ? CircularProgressIndicator(
+                      backgroundColor: Colors.white,
+                    )
+                  : PageView();
+        },
+      ),
     );
   }
 }
