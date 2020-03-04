@@ -62,7 +62,25 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                         )
-                      : PageView();
+                      : PageView(
+                          scrollDirection: Axis.horizontal,
+                          physics: BouncingScrollPhysics(),
+                          children: widget.bloc.fetchedData
+                              .map(
+                                (element) => Image.network(
+                                  element["url"],
+                                  loadingBuilder: (context, child, progress) =>
+                                      progress == null
+                                          ? child
+                                          : Center(
+                                              child: CircularProgressIndicator(
+                                                backgroundColor: Colors.white,
+                                              ),
+                                            ),
+                                ),
+                              )
+                              .toList(),
+                        );
         },
       ),
     );
