@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:cdli_tablet/home_screen/home_screen_bloc.dart';
+import 'package:cdli_tablet/home_screen/home_screen_event.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen(this.bloc, {Key key}) : super(key: key);
@@ -18,6 +19,10 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text("CDLI Tablet"),
         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.refresh),
+            onPressed: () => widget.bloc.input.add(FetchArtifacts()),
+          ),
           IconButton(
             icon: Icon(Icons.share),
             onPressed: () {},
