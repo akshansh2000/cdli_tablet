@@ -1,12 +1,15 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:cdli_tablet/home_screen_event.dart';
+
+import 'package:http/http.dart';
 
 class HomeScreenBloc {
   bool isLoading = true;
   bool didFail = false;
 
-  bool _updateState = false;
+  List<Map<String, String>> fetchedData = List<Map<String, String>>();
 
   StreamController<bool> _stateController = StreamController<bool>();
   StreamSink<bool> get _intermediate => _stateController.sink;
@@ -28,6 +31,16 @@ class HomeScreenBloc {
 
   _fetchArtifacts() async {
     final apiUri = "https://cdli.ucla.edu/cdlitablet_android/fetchdata";
+    final response = await get(apiUri);
+
+    isLoading = false;
+
+    if (response.statusCode != 200)
+      didFail = true;
+    else
+      fetchedData = JsonDecoder().convert(response.body);
+
+    _intermediate.add(isLoading);
   }
 
   void dispose() {
