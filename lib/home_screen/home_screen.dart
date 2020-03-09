@@ -15,8 +15,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Size size;
+
   @override
   Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("CDLI Tablet"),
@@ -85,6 +89,23 @@ class _HomeScreenState extends State<HomeScreen> {
                               .toList(),
                         );
         },
+      ),
+      bottomSheet: Container(
+        color: Colors.black,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: AnimatedContainer(
+            duration: Duration(seconds: 1),
+            width: size.width,
+            height: size.height / 5,
+            decoration: BoxDecoration(
+              color: Colors.grey[900],
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(30),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
