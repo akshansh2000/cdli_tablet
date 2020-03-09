@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import 'package:cdli_tablet/home_screen/home_screen_bloc.dart';
@@ -9,6 +11,7 @@ class HomeScreen extends StatefulWidget {
   HomeScreen(this.bloc, {Key key}) : super(key: key);
 
   final HomeScreenBloc bloc;
+  bool upwards = true;
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -90,21 +93,40 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
         },
       ),
-      bottomSheet: Container(
+      bottomNavigationBar: Container(
         color: Colors.black,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          child: AnimatedContainer(
-            duration: Duration(seconds: 1),
-            width: size.width,
-            height: size.height / 5,
-            decoration: BoxDecoration(
-              color: Colors.grey[900],
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(30),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Transform.rotate(
+              angle: -math.pi / 2,
+              child: IconButton(
+                icon: Icon(
+                  widget.upwards
+                      ? Icons.arrow_forward_ios
+                      : Icons.arrow_back_ios,
+                ),
+                onPressed: () => setState(
+                  () => widget.upwards = !widget.upwards,
+                ),
               ),
             ),
-          ),
+            SizedBox(height: 10),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: AnimatedContainer(
+                duration: Duration(seconds: 1),
+                width: size.width,
+                height: size.height / 5,
+                decoration: BoxDecoration(
+                  color: Colors.grey[900],
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(30),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
