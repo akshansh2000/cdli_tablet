@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:cdli_tablet/home_screen/home_screen_bloc.dart';
 import 'package:cdli_tablet/home_screen/home_screen_event.dart';
+import 'package:cdli_tablet/strings.dart' as strings;
 
 import 'package:preload_page_view/preload_page_view.dart';
 
@@ -12,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 
   final HomeScreenBloc bloc;
   bool upwards = true;
+  bool isInfoExpanded = false;
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -80,13 +82,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                 (element) => Image.network(
                                   element["url"],
                                   loadingBuilder: (context, child, progress) =>
-                                      progress == null
-                                          ? child
-                                          : Center(
-                                              child: CircularProgressIndicator(
-                                                backgroundColor: Colors.white,
-                                              ),
-                                            ),
+                                      widget.isInfoExpanded
+                                          ? Container()
+                                          : progress == null
+                                              ? child
+                                              : Center(
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    backgroundColor:
+                                                        Colors.white,
+                                                  ),
+                                                ),
                                 ),
                               )
                               .toList(),
@@ -113,9 +119,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ? Icons.arrow_forward_ios
                         : Icons.arrow_back_ios,
                   ),
-                  onPressed: () => setState(
-                    () => widget.upwards = !widget.upwards,
-                  ),
+                  onPressed: () => setState(() {
+                    widget.upwards = !widget.upwards;
+                    widget.isInfoExpanded = !widget.isInfoExpanded;
+                  }),
                 ),
               ),
             ),
@@ -123,13 +130,27 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: AnimatedContainer(
-                duration: Duration(seconds: 1),
+                duration: Duration(milliseconds: 300),
                 width: size.width,
-                height: size.height / 5,
+                height:
+                    widget.isInfoExpanded ? size.height / 1.2 : size.height / 5,
                 decoration: BoxDecoration(
                   color: Colors.grey[900],
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(30),
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Text(
+                    widget.isInfoExpanded
+                        ? strings.loremIpsumLong
+                        : strings.loremIpsumShort,
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w200,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
               ),

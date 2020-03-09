@@ -1,0 +1,31 @@
+String loremIpsumShort =
+    "Qui proident nulla ut ex incididunt fugiat cillum quis exercitation anim ad tempor. "
+    "Incididunt laboris id velit ea cupidatat. Est irure anim veniam labore. "
+    "Qui commodo excepteur nostrud duis do nulla esse enim elit ad fugiat elit. "
+    "Eu velit eiusmod nostrud non incididunt deserunt sint fugiat id.";
+
+String loremIpsumLong =
+    "Qui proident nulla ut ex incididunt fugiat cillum quis exercitation anim ad tempor. "
+    "Incididunt laboris id velit ea cupidatat. Est irure anim veniam labore. "
+    "Qui commodo excepteur nostrud duis do nulla esse enim elit ad fugiat elit. "
+    "Eu velit eiusmod nostrud non incididunt deserunt sint fugiat id.\n\n"
+    "Qui proident nulla ut ex incididunt fugiat cillum quis exercitation anim ad tempor. "
+    "Incididunt laboris id velit ea cupidatat. Est irure anim veniam labore. "
+    "Qui commodo excepteur nostrud duis do nulla esse enim elit ad fugiat elit. "
+    "Eu velit eiusmod nostrud non incididunt deserunt sint fugiat id.\n\n"
+    "Qui proident nulla ut ex incididunt fugiat cillum quis exercitation anim ad tempor. "
+    "Incididunt laboris id velit ea cupidatat. Est irure anim veniam labore. "
+    "Qui commodo excepteur nostrud duis do nulla esse enim elit ad fugiat elit. "
+    "Eu velit eiusmod nostrud non incididunt deserunt sint fugiat id.\n\n"
+    "Qui proident nulla ut ex incididunt fugiat cillum quis exercitation anim ad tempor. "
+    "Incididunt laboris id velit ea cupidatat. Est irure anim veniam labore. "
+    "Qui commodo excepteur nostrud duis do nulla esse enim elit ad fugiat elit. "
+    "Eu velit eiusmod nostrud non incididunt deserunt sint fugiat id.\n\n"
+    "Qui proident nulla ut ex incididunt fugiat cillum quis exercitation anim ad tempor. "
+    "Incididunt laboris id velit ea cupidatat. Est irure anim veniam labore. "
+    "Qui commodo excepteur nostrud duis do nulla esse enim elit ad fugiat elit. "
+    "Eu velit eiusmod nostrud non incididunt deserunt sint fugiat id.\n\n"
+    "Qui proident nulla ut ex incididunt fugiat cillum quis exercitation anim ad tempor. "
+    "Incididunt laboris id velit ea cupidatat. Est irure anim veniam labore. "
+    "Qui commodo excepteur nostrud duis do nulla esse enim elit ad fugiat elit. "
+    "Eu velit eiusmod nostrud non incididunt deserunt sint fugiat id.";
