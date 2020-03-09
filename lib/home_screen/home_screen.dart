@@ -100,14 +100,22 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             Transform.rotate(
               angle: -math.pi / 2,
-              child: IconButton(
-                icon: Icon(
-                  widget.upwards
-                      ? Icons.arrow_forward_ios
-                      : Icons.arrow_back_ios,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[900],
+                  borderRadius: BorderRadius.circular(100),
                 ),
-                onPressed: () => setState(
-                  () => widget.upwards = !widget.upwards,
+                child: IconButton(
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  icon: Icon(
+                    widget.upwards
+                        ? Icons.arrow_forward_ios
+                        : Icons.arrow_back_ios,
+                  ),
+                  onPressed: () => setState(
+                    () => widget.upwards = !widget.upwards,
+                  ),
                 ),
               ),
             ),
